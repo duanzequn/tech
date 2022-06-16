@@ -92,6 +92,5 @@ public class MyBuilder {
     public static void main(String[] args) {
         User user = new UserDirector(new AdminBuilder()).construct();
         System.out.println(user);
-
     }
 }
