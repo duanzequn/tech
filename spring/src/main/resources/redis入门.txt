@@ -1,0 +1,66 @@
+key(对象名)
+5种基本数据类型都属于值，要使用他们只能通过key来使用，通过对key的操作，即可操作这些对象
+对key的操作（5中基本数据类型都能用，后面每种数据类型都有其额外的操作命令）
+
+删 del k
+序列化（转化成二进制流）dump k
+是否存在 exists k
+设置过期    
+               按秒计
+                          时间 expire k 过期秒
+                          设置过期时间戳 expireat k 时间戳
+               按毫秒计
+                           expire->pexpire
+移除过期   persist  k
+获取过期倒计时 
+                         按秒
+                                ttl k  
+                         按毫秒
+                                pttl k
+按正则获取k     keys 正则表达式
+重命名  rename k 新名称
+获取值类型  type k
+移动到别的库   move k 别的库
+不存在才重命名  renamenx k 新名称
+          
+
+
+
+
+----------------------值类型（5种基本数据类型）
+
+1.
+String(最基础的类型，二进制安全（值可以是任何二进制对象）)
+增 set k v 
+    先查后改 getset k v 
+    没有再增 setnx k v
+    增过期 setex k 过期秒 v
+    批量增 mset k1 v1 k2 v2....
+查 get k  
+    截取 getrange k s e
+    批量获取  mget k1 k2 k3...
+长度 strlen
+自增 自增1 incr k
+        增n incrby k n
+
+自减 incr->decr
+字符串拼接  append k 追加串
+
+2.
+hash (String类型键的键值对集合),k表示hash表名，f表示字段（其实就是String类型的key）,v表示字段对应的值
+删   
+   hdel k f1 f2....
+增
+    hset k f v
+    批量增  hmset k f1 v1 f2 v2....
+是否存在字段
+    hexists k f
+获取hash所有数据
+    hgetall k
+获取所有字段
+    hkeys k
+获取字段数量
+    hlen k
+批量获取值
+    hmget k f1 f2....
+

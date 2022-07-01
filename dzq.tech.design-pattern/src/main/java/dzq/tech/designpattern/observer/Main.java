@@ -19,6 +19,18 @@ class Ring extends Observable {
     public void setType(String type) {
         this.type = type;
         this.setChanged();
+        switch (type) {
+            case "1":
+                System.out.println("上课铃了！");
+                break;
+            case "0":
+                System.out.println("正在播放音乐！");
+                break;
+            case "-1":
+                System.out.println("下课铃响了！");
+            default:
+                break;
+        }
         //this.notifyObservers(参数值);可用此方法通知并传递参数给观察者
         this.notifyObservers();
     }

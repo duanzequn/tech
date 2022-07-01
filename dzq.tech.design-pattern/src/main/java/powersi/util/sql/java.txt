@@ -1,0 +1,7 @@
+lSQL.append("    select  distinct abf3.babf32");
+					lSQL.append("  	 from abf9, ab53, abg8, aca2,abf3");
+					lSQL.append("    where aca2.baz001 = abg8.baz001");
+					lSQL.append("    and abg8.bacd09 = ab53.bacd09");
+					lSQL.append("    and ab53.babf91=abf9.babf91");
+					lSQL.append("    and abf3.babf31=abf9.babf31");
+					lSQL.append("    and aca2.aaz163 = :aaz163");
